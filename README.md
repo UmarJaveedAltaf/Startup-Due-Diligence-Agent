@@ -119,15 +119,22 @@ python ui/app.py
 
 ```
 
-```
-screenshots/
-├── analysis-interface.png
-├── accepted-startups.png
-├── rejected-candidates.png
-├── full-audit-log-1.png
-├── full-audit-log-2.png
+## 📸 Screenshots
 
-```
+### 🧠 Analysis Interface & Results
+
+| 🔍 Analysis Interface | 🟢 Accepted Startups | 🔴 Rejected Candidates |
+|----------------------|---------------------|------------------------|
+| ![Analysis Interface](screenshots/analysis-interface.png) | ![Accepted Startups](screenshots/accepted-startups.png) | ![Rejected Candidates](screenshots/rejected-candidates.png) |
+
+---
+
+### 📜 Audit Trail & System Logic
+
+| 📜 Full Audit Log (Part 1) | 📜 Full Audit Log (Part 2) | 🧩 System Architecture |
+|---------------------------|---------------------------|------------------------|
+| ![Audit Log 1](screenshots/full-audit-log-1.png) | ![Audit Log 2](screenshots/full-audit-log-2.png) | ![System Architecture](screenshots/system-architecture.png) |
+
 
 ```
 Installation & Setup
