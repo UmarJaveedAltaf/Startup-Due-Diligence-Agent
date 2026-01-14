@@ -34,8 +34,13 @@ This mirrors **investor-grade due diligence**, not blog-style summaries.
 
 The system follows a **strict, multi-agent verification pipeline** where every decision is evidence-gated.
 
-![System Architecture](screenshots/system-architecture.png)
-
+<p align="center">
+  <img 
+    src="screenshots/system-architecture.jpg" 
+    alt="System Architecture Diagram" 
+    width="100"
+  />
+</p>
 
 ---
 
