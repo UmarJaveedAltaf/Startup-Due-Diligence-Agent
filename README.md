@@ -104,7 +104,6 @@ A startup is **ACCEPTED only if**:
 This logic is **enforced in `agents/evidence.py`** and **cannot be bypassed**.
 
 ---
-
 ## 🖥️ Web UI (Gradio)
 
 The UI displays:
@@ -113,50 +112,51 @@ The UI displays:
 - 🔴 **Rejected Candidates** (with reasons)
 - 📜 **Full Audit Log** (every decision explained)
 
-### Run the UI
-bash
-python ui/app.py
+### ▶ Run the UI
 
+```bash
+python ui/app.py
+```
+## Visual Overview
+
+### Analysis Interface & Results
+
+| Analysis Interface | Accepted Startups | Rejected Candidates |
+|---|---|---|
+| [![Analysis Interface](screenshots/analysis-interface.png)](https://github.com/analyticsplatform/screenshots/blob/main/analysis-interface.png) | [![Accepted Startups](screenshots/accepted-startups.png)](https://github.com/analyticsplatform/screenshots/blob/main/accepted-startups.png) | [![Rejected Candidates](screenshots/rejected-candidates.png)](https://github.com/analyticsplatform/screenshots/blob/main/rejected-candidates.png) |
+
+### Audit Trail & System Logic
+
+| Full Audit Log (Part 1) | Full Audit Log (Part 2) |
+|---|---|
+| [![Audit Log 1](screenshots/full-audit-log1.png)](https://github.com/analyticsplatform/screenshots/blob/main/full-audit-log1.png) | [![Audit Log 2](screenshots/full-audit-log2.png)](https://github.com/analyticsplatform/screenshots/blob/main/full-audit-log2.png) |
+
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/UmarJaveedAltaf/Startup-Due-Diligence-Agent.git
+cd Startup-Due-Diligence-Agent
 ```
 
-## 📸 Screenshots
+### 2️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-### 🧠 Analysis Interface & Results
+### 3️⃣ Run the application
+```bash
+python ui/app.py
+```
 
-| 🔍 Analysis Interface | 🟢 Accepted Startups | 🔴 Rejected Candidates |
-|----------------------|---------------------|------------------------|
-| ![Analysis Interface](screenshots/analysis-interface.png) | ![Accepted Startups](screenshots/accepted-startups.png) | ![Rejected Candidates](screenshots/rejected-candidates.png) |
+> ⚠️ **Note:**  
+> Requires a local **Ollama** setup with **Llama 3**.
 
 ---
 
-### 📜 Audit Trail & System Logic
+## ⚠️ Disclaimer
 
-| 📜 Full Audit Log (Part 1) | 📜 Full Audit Log (Part 2) | 🧩 System Architecture |
-|---------------------------|---------------------------|------------------------|
-| ![Audit Log 1](screenshots/full-audit-log-1.png) | ![Audit Log 2](screenshots/full-audit-log-2.png) | ![System Architecture](screenshots/system-architecture.png) |
-
-
-```
-Installation & Setup
-1️⃣ Clone the repository
-git clone https://github.com/UmarJaveedAltaf/Startup-Due-Diligence-Agent.git
-cd Startup-Due-Diligence-Agent
-
-2️⃣ Install dependencies
-pip install -r requirements.txt
-
-3️⃣ Run the application
-python ui/app.py
-
-⚠️ Requires a local Ollama setup with Llama-3
-
-```
-```
-⚠️ Disclaimer
-
-This project is for educational and research purposes only.
-It does not constitute financial, legal, or investment advice.
-```
-
-
+This project is for **educational and research purposes only**.  
+It does **not** constitute financial, legal, or investment advice.
 
