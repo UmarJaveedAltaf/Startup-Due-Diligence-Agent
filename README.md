@@ -1,125 +1,139 @@
-🧠 Startup Due Diligence Agent
+# 🧠 Startup Due Diligence Agent  
+**Evidence-First AI Agent for Startup Analysis**
 
-Evidence-First AI Agent for Startup Analysis
+An autonomous, evidence-driven AI agent that performs **startup due diligence** with a **strict verification pipeline**.
 
-An autonomous, evidence-driven AI agent that performs startup due diligence with a strict verification pipeline.
-The system refuses to speculate and only accepts claims that are explicitly supported by public evidence.
+> ⚠️ **Design Principle:**  
+> **No evidence → No acceptance**
 
-⚠️ Design principle: No evidence → No acceptance.
+The system refuses to speculate and only accepts claims that are **explicitly supported by public, numeric evidence**.
 
-🚀 What This Project Does
+---
 
-The Startup Due Diligence Agent analyzes startups based on a user query (e.g., “AI healthcare startups in the US with under 50 employees”) and:
+## 🚀 What This Project Does
 
-Extracts real startup candidates (no media, no generic terms)
+Given a user query like:
 
-Performs focused per-company research
+> *“Analyze AI healthcare startups in the US with under 50 employees”*
 
-Validates claims using public evidence
+The agent:
 
-Accepts only startups with explicitly verified employee counts
+- ✅ Extracts **real startup candidates** (no media, no generic terms)
+- 🔍 Performs **focused per-company research**
+- 📊 Detects **explicit numeric employee counts**
+- 🟢 **Accepts** startups *only if* employee count **< 50 is verified**
+- 🔴 **Rejects** everything else with **clear reasons**
+- 📜 Produces a **full audit log** explaining every decision
+- 🖥️ Presents results through a **Gradio web UI**
 
-Rejects everything else with clear reasons
+This mirrors **investor-grade due diligence**, not blog-style summaries.
 
-Presents results through a Gradio web UI
+---
 
-This mirrors real investor-grade diligence, not blog-style summaries.
+## 🧩 System Architecture
 
-🧩 System Architecture
-User Query
-   ↓
-Candidate Extraction Agent
-   ↓
-Per-Company Research Agent
-   ↓
-Evidence Validator (Hard Gate)
-   ↓
-Accepted / Rejected Lists
-   ↓
-Gradio UI + Full Audit Log
+The system follows a **strict, multi-agent verification pipeline** where every decision is evidence-gated.
 
-🧠 Core Design Philosophy
+![System Architecture](screenshots/system-architecture.png)
 
-❌ No guessing
 
-❌ No extrapolation
+---
 
-❌ No vague “early-stage” assumptions
+## 🧠 Core Design Philosophy
 
-✅ Explicit numeric evidence only
+- ❌ No guessing  
+- ❌ No extrapolation  
+- ❌ No vague “early-stage” assumptions  
+- ✅ Explicit **numeric evidence only**  
+- ✅ Transparent rejection reasons  
+- ✅ Full audit trail  
 
-✅ Transparent rejection reasons
+This makes the system **trustworthy, auditable, and defensible**.
 
-✅ Full audit trail
+---
 
-This makes the system trustworthy, auditable, and defensible.
+## 📁 Project Structure
 
-📂 Project Structure
+```
 startup-due-diligence-agent/
 │
-├── main.py                # CLI pipeline runner
+├── main.py                     # CLI pipeline runner
 ├── requirements.txt
 ├── README.md
 │
 ├── agents/
-│   ├── candidates.py      # Multi-pass startup extraction
-│   ├── researcher.py      # Per-company evidence retrieval
-│   ├── evidence.py        # Hard validation + employee count detection
+│   ├── candidates.py           # Multi-pass startup extraction
+│   ├── researcher.py           # Per-company evidence retrieval
+│   ├── evidence.py             # Hard validation + employee count detection
 │   ├── planner.py
 │   ├── finance.py
-│   ├── risk.py
+│   └── risk.py
 │
 ├── tools/
-│   └── web_search.py      # Multi-query web search
+│   └── web_search.py          # Multi-query web search
 │
 ├── memory/
-│   └── vector_store.py    # FAISS-based evidence retrieval
+│   └── vector_store.py        # FAISS-based evidence retrieval
 │
 ├── config/
 │   └── settings.py
 │
 └── ui/
-    └── app.py             # Gradio web interface
+    └── app.py                 # Gradio web interface
+```
 
-🔍 Employee Count Verification (Key Feature)
+## 🔍 Employee Count Verification (Key Feature)
 
-A startup is ACCEPTED only if:
+A startup is **ACCEPTED only if**:
 
-A numeric employee count is explicitly found
+- A **numeric employee count** is found  
+- The count is **explicitly stated** in public sources  
+- The number is **strictly under 50**
 
-AND the count is < 50
+### Examples
 
-AND the evidence comes from public sources
+| Evidence Found | Result |
+|---------------|--------|
+| “~33 employees” | ✅ Accepted |
+| “28 employees” | ✅ Accepted |
+| “50 employees” | ❌ Rejected |
+| “Early-stage startup” | ❌ Rejected |
+| “Small team” | ❌ Rejected |
+| No number | ❌ Rejected |
 
-Examples:
+This logic is **enforced in `agents/evidence.py`** and **cannot be bypassed**.
 
-✅ “~33 employees” → Accepted
+---
 
-❌ “Early-stage startup” → Rejected
-
-❌ “Small team” → Rejected
-
-❌ “50 employees” → Rejected
-
-This logic is enforced in agents/evidence.py and cannot be bypassed.
-
-🖥️ Web UI (Gradio)
+## 🖥️ Web UI (Gradio)
 
 The UI displays:
 
-🟢 Accepted Startups (employee count verified)
+- 🟢 **Accepted Startups** (employee count verified)
+- 🔴 **Rejected Candidates** (with reasons)
+- 📜 **Full Audit Log** (every decision explained)
 
-🔴 Rejected Candidates (with reasons)
-
-📜 Full Audit Log (every decision explained)
-
-Run the UI:
+### Run the UI
+bash
 python ui/app.py
 
-⚙️ Installation & Setup
+```
+
+```
+screenshots/
+├── analysis-interface.png
+├── accepted-startups.png
+├── rejected-candidates.png
+├── full-audit-log-1.png
+├── full-audit-log-2.png
+
+```
+
+```
+Installation & Setup
 1️⃣ Clone the repository
-git clone https://github.com/<your-username>/startup-due-diligence-agent.git
-cd startup-due-diligence-agent
+git clone https://github.com/UmarJaveedAltaf/Startup-Due-Diligence-Agent.git
+cd Startup-Due-Diligence-Agent
 
 2️⃣ Install dependencies
 pip install -r requirements.txt
@@ -127,25 +141,15 @@ pip install -r requirements.txt
 3️⃣ Run the application
 python ui/app.py
 
+⚠️ Requires a local Ollama setup with Llama-3
 
-Requires a local Ollama setup with llama3.
+```
+```
+⚠️ Disclaimer
 
-🧪 Example Output
-
-Accepted
-
-Healium
-SimX
-
-
-Rejected
-
-PrecisionLife — No explicit public evidence of employee count under 50
-Proximie — Employee count found (105), exceeds limit
+This project is for educational and research purposes only.
+It does not constitute financial, legal, or investment advice.
+```
 
 
-Each decision includes verbatim evidence justification.
-🛑 Disclaimer
 
-This tool relies only on publicly available information.
-Rejection indicates insufficient evidence, not company size or quality.
