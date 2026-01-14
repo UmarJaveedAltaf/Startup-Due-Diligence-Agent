@@ -3,8 +3,7 @@
 
 An autonomous, evidence-driven AI agent that performs **startup due diligence** with a **strict verification pipeline**.
 
-> ⚠️ **Design Principle:**  
-> **No evidence → No acceptance**
+> ⚠️ **Design Principle:**  **No evidence → No acceptance**
 
 The system refuses to speculate and only accepts claims that are **explicitly supported by public, numeric evidence**.
 
