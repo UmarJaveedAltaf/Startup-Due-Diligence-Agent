@@ -1,15 +1,22 @@
-# 🧠 Startup Due Diligence Agent  
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent-blueviolet)
+![AI](https://img.shields.io/badge/AI-Evidence--First-informational)
+![Verification](https://img.shields.io/badge/Verification-Strict-success)
+![UI](https://img.shields.io/badge/UI-Gradio-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+#  Startup Due Diligence Agent  
 **Evidence-First AI Agent for Startup Analysis**
 
 An autonomous, evidence-driven AI agent that performs **startup due diligence** with a **strict verification pipeline**.
 
-> ⚠️ **Design Principle:**  **No evidence → No acceptance**
+>  **Design Principle:**  **No evidence → No acceptance**
 
 The system refuses to speculate and only accepts claims that are **explicitly supported by public, numeric evidence**.
 
 ---
 
-## 🚀 What This Project Does
+## What This Project Does
 
 Given a user query like:
 
@@ -17,19 +24,19 @@ Given a user query like:
 
 The agent:
 
-- ✅ Extracts **real startup candidates** (no media, no generic terms)
-- 🔍 Performs **focused per-company research**
-- 📊 Detects **explicit numeric employee counts**
-- 🟢 **Accepts** startups *only if* employee count **< 50 is verified**
-- 🔴 **Rejects** everything else with **clear reasons**
-- 📜 Produces a **full audit log** explaining every decision
-- 🖥️ Presents results through a **Gradio web UI**
+-  Extracts **real startup candidates** (no media, no generic terms)
+-  Performs **focused per-company research**
+-  Detects **explicit numeric employee counts**
+-  **Accepts** startups *only if* employee count **< 50 is verified**
+-  **Rejects** everything else with **clear reasons**
+-  Produces a **full audit log** explaining every decision
+-  Presents results through a **Gradio web UI**
 
 This mirrors **investor-grade due diligence**, not blog-style summaries.
 
 ---
 
-## 🧩 System Architecture
+## System Architecture
 
 The system follows a **strict, multi-agent verification pipeline** where every decision is evidence-gated.
 
@@ -43,7 +50,7 @@ The system follows a **strict, multi-agent verification pipeline** where every d
 
 ---
 
-## 🧠 Core Design Philosophy
+##  Core Design Philosophy
 
 - ❌ No guessing  
 - ❌ No extrapolation  
@@ -56,7 +63,7 @@ This makes the system **trustworthy, auditable, and defensible**.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 startup-due-diligence-agent/
@@ -86,7 +93,7 @@ startup-due-diligence-agent/
     └── app.py                 # Gradio web interface
 ```
 
-## 🔍 Employee Count Verification (Key Feature)
+##  Employee Count Verification (Key Feature)
 
 A startup is **ACCEPTED only if**:
 
@@ -108,7 +115,7 @@ A startup is **ACCEPTED only if**:
 This logic is **enforced in `agents/evidence.py`** and **cannot be bypassed**.
 
 ---
-## 🖥️ Web UI (Gradio)
+##  Web UI (Gradio)
 
 The UI displays:
 
